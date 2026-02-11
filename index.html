@@ -61,7 +61,7 @@
 					t1 = t * (4/5);
                     u1 = "Réaumur";
 			   }
-			alert("Temperature is "+t1+" in "+u1);
+			return {"value":t1, "unit":u1};
 		}
 
 	    $(document).ready(function(){
@@ -75,6 +75,8 @@
 			   }
 
 			   var tConv = tempConversion(t,u);
+			   var message = "Temperature is "+tConv.value+" in "+tConv.unit;
+			   $('#result').html(message);
 			});
 		});
 
